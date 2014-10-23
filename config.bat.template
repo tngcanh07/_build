@@ -1,0 +1,49 @@
+@echo off
+call %~dp0setEnv.bat
+
+REM Version numbers
+set VERSION_MAJOR=1
+set VERSION_MINOR=0
+set VERSION_BUILD=0
+set VERSION=%VERSION_MAJOR%%VERSION_MINOR%%VERSION_BUILD%
+set VERSION_NAME=%VERSION_MAJOR%.%VERSION_MINOR%.%VERSION_BUILD%
+
+REM Package name
+set APP_NAME=4 Pics 1 Word Cheats
+set OPERATOR=picword
+set SPECIFIC=lotumfourpic
+set PACKAGE_NAME=vnmobile.cheats.android.%OPERATOR%.%SPECIFIC%
+SET APK_NAME=Lotum_FourPic_%VERSION_MAJOR%_%VERSION_MINOR%_%VERSION_BUILD%
+
+REM override resource android
+REM OVERRIDE_ANDROID_RESOURCES=1: enable
+REM OVERRIDE_ANDROID_RESOURCES=0: disable
+set OVERRIDE_ANDROID_RESOURCES=1
+set RES_DIR=%ROOT_DIR%\Android-Resources\
+set RES_SPECIFIC_NAME=lotum-4pics1word
+set RES_IMAGE=%RES_DIR%\images\medium
+
+REM build flags
+
+REM Auto increate build version code flag
+REM 1: enable
+REM 0: disable
+SET AUTO_INCREATE_VERSION_CODE=1
+
+
+REM AdsNetwork Configuration
+SET admob_adUnitId=a15258def86677c
+SET admob_loadAdOnCreate=true
+
+REM Game config
+SET config_gameId=GameId.G_LOTUM_4PICS1WORD
+SET config_isMultipleGame=false
+SET config_isSingleGame=true
+if %IS_RELEASE%==1 (
+	SET config_isRelease=true
+	SET config_isDebug=false
+) else (
+	SET config_isRelease=false
+	SET config_isDebug=true
+)
+
