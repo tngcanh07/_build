@@ -27,7 +27,7 @@ public class UpdateManifest {
 
 	public void updateVersion(File file, String versionName) throws IOException {
 		String manifest = readFile(file);
-		manifest = updateVersionCode(manifest, 1);
+		manifest = updateVersionCode(manifest, 0);
 		manifest = updateVersionName(manifest, versionName);
 		
 		writeFile(file, manifest);
