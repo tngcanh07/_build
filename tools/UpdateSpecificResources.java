@@ -14,11 +14,6 @@ public class UpdateSpecificResources {
 			return;
 		}
 		try {
-			// new UpdateSpecificResources().execute(
-			// "H:/Mobiles/CheatProjects/Riddles/Android-Resources",
-			// "Pyrosphere-AYearOfRiddles",
-			// "H:/Mobiles/CheatProjects/Riddles/Android-Riddles");
-			
 			new UpdateSpecificResources().execute(args[0], args[1], args[2]);
 
 		} catch (Exception e) {
